@@ -1,6 +1,5 @@
 .venv
 .idea
 data/numberbatch-en.txt
-data/numberbatch-en-19.08.txt.gz
 out/*
 !out/readme.txt
