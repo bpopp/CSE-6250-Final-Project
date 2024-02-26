@@ -11,7 +11,7 @@ according to risk for suicide than traditional ML models.
 ### Instructions
 
 1. Create python environment and install required modules (ie. pip install -r requirements.txt). Note that python 3.11 was used for this exercise.
-2. Download [conceptnet](https://conceptnet.s3.amazonaws.com/downloads/2019/numberbatch/numberbatch-en-19.08.txt.gz) to Data folder
+2. Download [conceptnet](https://conceptnet.s3.amazonaws.com/downloads/2019/numberbatch/numberbatch-en-19.08.txt.gz) word vector and extract to data folder as 'numberbatch-en.txt'
 
 ### Resources
 
@@ -30,10 +30,14 @@ Manas Gaur, Amanuel Alambo, Joy Sain, Ugur Kursuncu, Krishnaprasad Thirunarayan,
 ### Additional Resources
 
 1. [Leveraging Reddit for Suicidal Ideation Detection](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC9407719/): excellent article that reviews over 100 studies related to this topic. 
-
+1. [Suicide Risk Assessment Reference Guide](https://www.mentalhealth.va.gov/docs/Suicide_Risk_Assessment_Reference_Guide.pdf): short guide for diagnosing suicidal behavior (manually)
 ### Methodology 
 
-#### Code Reproduction
+#### Code Installation and Modernization
 1. Minor changes to code organization
 1. Updated keras np_utils.to_categorical to utils.to_categorical (api change)
-1. Parentheticized all print statements (python deprecation)
+2. General code cleanup for python 3
+   * Parentheticized all print statements
+   * Added some list comprehension
+1. Added a limit to the word2vec function to improve performance while debugging (performance)
+2. Minor changes to support gensim 4.0 (api changes)

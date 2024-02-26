@@ -21,12 +21,12 @@ from sklearn.model_selection import StratifiedKFold
 
 punctuations = list(string.punctuation)
 
-ip_txt_file = 'Data/500_Reddit_users_posts_labels.csv'  # CSV file: "User", "Post", "Label"
-ip_feat_file = 'Data/External_Features.csv'             # CSV file: "User", "Features"
+ip_txt_file = '../data/500_Reddit_users_posts_labels.csv'  # CSV file: "User", "Post", "Label"
+ip_feat_file = '../data/External_Features.csv'             # CSV file: "User", "Features"
 
-w2v_file = {'file': 'Data/english_conceptnet.txt', 'is_binary': False}
+w2v_file = {'file': '../data/english_conceptnet.txt', 'is_binary': False}
 
-op_file = 'Result_3+1-Label_Classification.tsv'
+op_file = '../out/Result_3+1-Label_Classification.tsv'
 
 severity_classes = {'Supportive': 0, 'Indicator': 1, 'Ideation': 2, 'Behavior': 3, 'Attempt': 4}
 
