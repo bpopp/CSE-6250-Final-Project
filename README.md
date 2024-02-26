@@ -28,7 +28,6 @@ Manas Gaur, Amanuel Alambo, Joy Sain, Ugur Kursuncu, Krishnaprasad Thirunarayan,
 **Dataset:**
 [Github](https://github.com/manasgaur/Knowledge-aware-Assessment-of-Severity-of-Suicide-Risk-for-Early-Intervention)
 
-
 ### Additional Resources
 
 1. [Leveraging Reddit for Suicidal Ideation Detection](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC9407719/): excellent article that reviews over 100 studies related to this topic. 
