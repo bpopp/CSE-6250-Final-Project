@@ -2,3 +2,4 @@
 .idea
 data/numberbatch-en-19.08.txt.gz
 out/*
+!out/readme.txt
