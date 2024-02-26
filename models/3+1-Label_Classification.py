@@ -3,7 +3,7 @@
 #
 # # 3+1-Label classification: Merge "Supportive" and "Indicator" classes
 #
-
+import os
 import csv
 import string
 from nltk import word_tokenize
@@ -71,7 +71,7 @@ def read_ip_file(ip_file, lst_merge_class=['Supportive', 'Indicator']):
         with open(ip_file) as csv_file:
 
             # Exclude the first line (header)
-            csv_file.next()
+            next(csv_file)
             csv_reader = csv.reader(csv_file, delimiter=',')
 
             # Loop through each line
@@ -81,7 +81,7 @@ def read_ip_file(ip_file, lst_merge_class=['Supportive', 'Indicator']):
 
                 # Remove non-ascii characters
                 printable = set(string.printable)
-                sent = filter(lambda x: x in printable, sent).lower()
+                sent = "".join(filter(lambda x: x in printable, sent))
 
                 # Remove punctuation
                 lst_tokens = [item.strip("".join(punctuations)) for item in word_tokenize(sent) if
@@ -117,10 +117,16 @@ def vectorize_data(lst_input):
     wv_size = sys_params['emb_dim']
 
     # Load the pre-trained word2vec model
-    w2v_model = KeyedVectors.load_word2vec_format(w2v_file['file'], binary=w2v_file['is_binary'])
+    # w2v_model = KeyedVectors.load_word2vec_format(w2v_file['file'], binary=w2v_file['is_binary'])
+    if os.path.isfile ( '../out/vectors.kv' ):
+        w2v_model = KeyedVectors.load('../out/vectors.kv')
+    else:
+        w2v_model = KeyedVectors.load_word2vec_format(w2v_file['file'], binary=w2v_file['is_binary'], limit=w2v_file['limit'])
+        w2v_model.save( '../out/vectors.kv' )
+
 
     # Get the word2vec vocabulary
-    vocab = w2v_model.vocab
+    vocab = w2v_model.key_to_index
 
     #
     padding_zeros = np.zeros(wv_size, dtype=np.float32)
@@ -184,7 +190,7 @@ def read_external_features(input_file, feature_file):
 
     with open(feature_file) as csv_file:
         # Exclude the header ['User', feature_scores ...]
-        csv_file.next()
+        next(csv_file)
 
         # Read the CSV feature file
         csv_reader = csv.reader(csv_file, delimiter=',')
@@ -237,7 +243,7 @@ def get_cnn_model():
     l_op = Dense(units=cnn_params['op_unit'], activation=cnn_params['op_activ'], name='cnn_op')(l_drop)
 
     final_model = Model(l_ip, l_op)
-    final_model.compile(optimizer=Adam(lr=cnn_params['l_rate']), loss=cnn_params['loss'], metrics=['accuracy'])    # 'categorical_crossentropy'
+    final_model.compile(optimizer=Adam(learning_rate=cnn_params['l_rate']), loss=cnn_params['loss'], metrics=['accuracy'])    # 'categorical_crossentropy'
 
     return final_model
 
@@ -248,7 +254,7 @@ def get_mlp_model(ip_dim):
 
     mlp_model.add(Dense(units=cnn_params['op_unit'], activation=cnn_params['op_activ'], name='classif_op',
                             input_dim=ip_dim))
-    mlp_model.compile(optimizer=Adam(lr=cnn_params['l_rate']), loss=cnn_params['loss'],
+    mlp_model.compile(optimizer=Adam(learning_rate=cnn_params['l_rate']), loss=cnn_params['loss'],
                           metrics=['accuracy'])
     return mlp_model
 
