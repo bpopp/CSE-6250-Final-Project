@@ -9,7 +9,7 @@ import string
 from nltk import word_tokenize
 from gensim.models.keyedvectors import KeyedVectors
 import numpy as np
-from keras.utils.utils import to_categorical
+from keras.utils import to_categorical
 import datetime, time
 from keras.models import Sequential, Model
 from keras.layers import Dense, Dropout, Flatten, Activation, Input, MaxPool2D
@@ -56,8 +56,8 @@ cnn_params = {'no_filters': 100,
 
 intermediate_layer = 'flat_drop'    # for extracting features from CNN
 
-print '\nSystem Parameters: ', sys_params
-print '\nCNN Parameters: ', cnn_params
+print ('\nSystem Parameters: ', sys_params)
+print ('\nCNN Parameters: ', cnn_params)
 
 # Read the input CSV file
 def read_ip_file(ip_file, exclude_clss='Supportive'):
@@ -265,7 +265,7 @@ def get_prf1_score(y_true, y_pred):
     P = tp / (tp + fp)
     R = tp / (tp + fn)
     F = 2 * P * R / (P + R)
-    print '\nPrecision: {0}\t Recall: {1}\t F1-Score: {2}'.format(P, R, F)
+    print ('\nPrecision: {0}\t Recall: {1}\t F1-Score: {2}'.format(P, R, F))
     return {'P': P, 'R': R, 'F': F}
 
 
@@ -287,7 +287,7 @@ if __name__ == '__main__':
         # Run the model for each splits
         for train_index, test_index in skf.split(x_data, y_data):
             cv_count += 1
-            print '\nRunning Stratified Cross Validation: {0}/{1}...'.format(cv_count, sys_params['cross_val'])
+            print ('\nRunning Stratified Cross Validation: {0}/{1}...'.format(cv_count, sys_params['cross_val']))
 
             x_train, x_test = x_data[train_index], x_data[test_index]
             y_train, y_test = y_data[train_index], y_data[test_index]
@@ -304,7 +304,7 @@ if __name__ == '__main__':
 
             # CNN model for training on the embedded text input
             cnn_model = get_cnn_model()
-            print cnn_model.summary()
+            print (cnn_model.summary())
 
             # Train the model
             cnn_model.fit(x=x_train, y=y_train, batch_size=cnn_params['batch'], epochs=cnn_params['epoch'], verbose=cnn_params['verbose'])
@@ -337,22 +337,21 @@ if __name__ == '__main__':
 
             # Get the MLP model for final classification
             mlp_model = get_mlp_model(ip_dim = len(x_train_features[0]))
-            print mlp_model.summary()
-
+            print (mlp_model.summary())
             tc = time.time()
 
             # Train the MLP model
             mlp_model.fit(x=x_train_features, y=y_train, batch_size=cnn_params['batch'], epochs=cnn_params['epoch'], verbose=cnn_params['verbose'])
 
-            print '\nTime elapsed in training CNN: ', str(datetime.timedelta(seconds=time.time() - tc))
+            print ('\nTime elapsed in training CNN: ', str(datetime.timedelta(seconds=time.time() - tc)))
             del x_train, y_train
 
-            print '\nEvaluating on Test data...\n'
+            print ('\nEvaluating on Test data...\n')
             # # Print Loss and Accuracy
             model_metrics = mlp_model.evaluate(x_test_features, y_test)
 
             for i in range(len(model_metrics)):
-                print mlp_model.metrics_names[i], ': ', model_metrics[i]
+                print (mlp_model.metrics_names[i], ': ', model_metrics[i])
 
             y_pred = mlp_model.predict(x_test_features)
 
@@ -361,7 +360,7 @@ if __name__ == '__main__':
 
             # Scikit-learn classification report (P, R, F1, Support)
             report = classification_report(y_test, y_pred)
-            print report
+            print (report)
 
             of.write('Cross_Val:\n')
             for i in range(len(y_pred)):
@@ -370,10 +369,10 @@ if __name__ == '__main__':
             score = get_prf1_score(y_test, y_pred)
             k_score.append(score)
 
-        print k_score
+        print (k_score)
 
         avgP = np.average([score['P'] for score in k_score])
         avgR = np.average([score['R'] for score in k_score])
         avgF = np.average([score['F'] for score in k_score])
 
-        print '\nAfter Stratified Cross Validation Average Precision: {0}\t Recall: {1}\t F1-Score: {2}'.format(avgP, avgR, avgF)
+        print ('\nAfter Stratified Cross Validation Average Precision: {0}\t Recall: {1}\t F1-Score: {2}'.format(avgP, avgR, avgF))

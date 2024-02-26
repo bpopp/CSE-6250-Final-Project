@@ -9,7 +9,7 @@ import string
 from nltk import word_tokenize
 from gensim.models.keyedvectors import KeyedVectors
 import numpy as np
-from keras.utils.utils import to_categorical
+from keras.utils import to_categorical
 import datetime, time
 from keras.models import Sequential, Model
 from keras.layers import Dense, Dropout, Flatten, Activation, Input, MaxPool2D
@@ -21,10 +21,10 @@ from sklearn.model_selection import StratifiedKFold
 
 punctuations = list(string.punctuation)
 
-ip_txt_file = 'Data/500_Reddit_users_posts_labels.csv'  # CSV file: "User", "Post", "Label"
-ip_feat_file = 'Data/External_Features.csv'             # CSV file: "User", "Features"
+ip_txt_file = '../Data/500_Reddit_users_posts_labels.csv'  # CSV file: "User", "Post", "Label"
+ip_feat_file = '../Data/External_Features.csv'             # CSV file: "User", "Features"
 
-w2v_file = {'file': 'Data/english_conceptnet.txt', 'is_binary': False}
+w2v_file = {'file': '../Data/english_conceptnet.txt', 'is_binary': False}
 
 op_file = 'Result_5-Label_Classification.tsv'
 
