@@ -3,7 +3,6 @@
 * Brian Popp, [bpopp7@gatech.edu](mailto:bpopp7@gatech.edu)
 * Danielle Velott, [dvellot3@gatech.edu](mailto:dvellot3@gatech.edu)
 
-### Summary
 Our team will attempt to validate the results of [this paper](https://dl.acm.org/doi/10.1145/3308558.3313698)
 and show that a CNN deep learning model can better categorize social media posts 
 according to risk for suicide comparted to traditional ML models.
