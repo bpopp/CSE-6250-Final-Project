@@ -6,7 +6,7 @@
 ### Summary
 Our team will attempt to validate the results of [this paper](https://dl.acm.org/doi/10.1145/3308558.3313698)
 and show that a CNN deep learning model can better categorize social media posts 
-according to risk for suicide than traditional ML models.
+according to risk for suicide comparted to traditional ML models.
 
 ### Instructions
 
