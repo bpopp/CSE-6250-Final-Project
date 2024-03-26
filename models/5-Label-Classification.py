@@ -36,7 +36,7 @@ severity_classes = {'Supportive': 0, 'Indicator': 1, 'Ideation': 2, 'Behavior': 
 sys_params = {'emb_dim': 300,
               'max_sent_len': 1500,
               'str_padd': '@PADD',
-              'cross_val': 5}
+              'cross_val': 2}
 
 cnn_params = {'no_filters': 100,
               'kernels': [3, 4, 5],
@@ -54,7 +54,7 @@ cnn_params = {'no_filters': 100,
               'l_rate': 0.001,
               'loss': 'categorical_crossentropy',
               'batch': 4,
-              'epoch': 50,
+              'epoch': 5,
               'verbose': 1}
 
 intermediate_layer = 'flat_drop'    # for extracting features from CNN
