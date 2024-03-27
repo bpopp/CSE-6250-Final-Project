@@ -1,6 +1,6 @@
 .venv
 .idea
-data/numberbatch-en.txt
 out/*
 !out/readme.txt
 /models/
+data/fulldataset.npz
