@@ -14,7 +14,7 @@ according to risk for suicide comparted to traditional ML models.
 (Note that python 3.11 was used to build this project.)
 
 1. Create python environment and install required modules (ie. pip install -r requirements.txt). 
-2. Open and run all cells in the file [CSE-6250-Team-A1-Full Source Code.ipynb]([./CSE-6250-Team-A1-Full Source Code.ipynb](https://github.com/bpopp/CSE-6250-Final-Project/blob/main/CSE-6250-Team-A1-Full%20Source%20Code.ipynb))
+2. Open and run all cells in the file [CSE-6250-Team-A1-Full Source Code.ipynb](https://github.com/bpopp/CSE-6250-Final-Project/blob/main/CSE-6250-Team-A1-Full%20Source%20Code.ipynb)
 
 ### Resources
 
