@@ -8,10 +8,10 @@ and show that a CNN deep learning model can better categorize social media posts
 according to risk for suicide comparted to traditional ML models.
 
 ### Google Collab
-The [google collab](https://colab.research.google.com/drive/1fVu84WMKqF3Fa7VqJ3zFT6rt5D_TMR9e?usp=sharing) show a partial implementation of our solution using a limited dataset.
+The [google collab](https://colab.research.google.com/drive/1fVu84WMKqF3Fa7VqJ3zFT6rt5D_TMR9e?usp=sharing) show a partial implementation of our replication using a limited dataset.
 
 ### Full Source Code Instructions
-The full dataset includes source code for building dataset, running and optimizing the models.
+The full dataset includes source code for re-building a dataset, running and optimizing the models.
 
 (Note that python 3.11 was used to build this project.)
 
