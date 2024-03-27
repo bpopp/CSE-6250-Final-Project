@@ -11,8 +11,7 @@ according to risk for suicide comparted to traditional ML models.
 (Note that python 3.11 was used to build this project.)
 
 1. Create python environment and install required modules (ie. pip install -r requirements.txt). 
-2. Download [conceptnet](https://conceptnet.s3.amazonaws.com/downloads/2019/numberbatch/numberbatch-en-19.08.txt.gz) word vector and extract to data folder as 'numberbatch-en.txt'
-3. Run 'python 5-Label-Classification.py' from the models directory.
+2. Open and run all cells in the file **CSE-6250-Team-A1-Full Source Code.ipynb**
 
 ### Resources
 
