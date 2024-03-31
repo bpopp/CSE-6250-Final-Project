@@ -36,13 +36,3 @@ Manas Gaur, Amanuel Alambo, Joy Sain, Ugur Kursuncu, Krishnaprasad Thirunarayan,
 
 1. [Leveraging Reddit for Suicidal Ideation Detection](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC9407719/): excellent article that reviews over 100 studies related to this topic. 
 1. [Suicide Risk Assessment Reference Guide](https://www.mentalhealth.va.gov/docs/Suicide_Risk_Assessment_Reference_Guide.pdf): short guide for diagnosing suicidal behavior (manually)
-### Methodology 
-
-#### Code Installation and Modernization
-1. Minor changes to code organization
-1. Updated keras np_utils.to_categorical to utils.to_categorical (api change)
-2. General code cleanup for python 3
-   * Parentheticized all print statements
-   * Added some list comprehension
-1. Added a limit to the word2vec function to improve performance while debugging (performance)
-2. Minor changes to support gensim 4.0 (api changes)
