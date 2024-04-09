@@ -8,7 +8,7 @@ according to risk for suicide comparted to traditional ML models.
 The [google collab](https://colab.research.google.com/drive/1fVu84WMKqF3Fa7VqJ3zFT6rt5D_TMR9e?usp=sharing) show a partial implementation of our replication using a limited dataset.
 
 ### Full Source Code Instructions
-The full dataset includes source code for re-building a dataset, running and optimizing the models.
+The full source code includes procedures for re-building a dataset, running and optimizing the models.
 
 (Note that python 3.11 was used to build this project.)
 
