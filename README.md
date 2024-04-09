@@ -1,7 +1,4 @@
 # GT CSE 6250 Spring Project
-**Team A1**
-* Brian Popp, [bpopp7@gatech.edu](mailto:bpopp7@gatech.edu)
-* Danielle Velott, [dvelott3@gatech.edu](mailto:dvelott3@gatech.edu)
 
 Our team will attempt to validate the results of [this paper](https://dl.acm.org/doi/10.1145/3308558.3313698)
 and show that a CNN deep learning model can better categorize social media posts 
