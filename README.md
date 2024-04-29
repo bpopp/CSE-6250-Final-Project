@@ -4,6 +4,9 @@ Our team will attempt to validate the results of [this paper](https://dl.acm.org
 and show that a CNN deep learning model can better categorize social media posts 
 according to risk for suicide comparted to traditional ML models.
 
+### Presentation
+[https://www.youtube.com/watch?v=q8swAqHIBTw&lc=Ugy0EMoHcx6Ly5biuy94AaABAg](https://www.youtube.com/watch?v=q8swAqHIBTw&lc=Ugy0EMoHcx6Ly5biuy94AaABAg)  
+
 ### Google Collab
 The [google collab](https://colab.research.google.com/drive/1fVu84WMKqF3Fa7VqJ3zFT6rt5D_TMR9e?usp=sharing) show a partial implementation of our replication using a limited dataset.
 
